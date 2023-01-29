@@ -1,0 +1,18 @@
+<body>
+  <ngx-spinner >
+    <p style="font-size: 20px; color: white;margin-top: 110px"> الرجاء الأنتظار .....</p>
+   </ngx-spinner
+  >
+  <div class="no-print">
+    <app-nav-menu></app-nav-menu>
+    <!-- <ejs-uploader #defaultupload  [autoUpload]='false'></ejs-uploader> -->
+  </div>
+  <main>
+    <div class="container-fluid text-center">
+      <router-outlet></router-outlet>
+
+      <simple-notifications [options]="options"></simple-notifications>
+    </div>
+  </main>
+</body>
+<!-- <app-MessageService></app-MessageService> -->

@@ -1,0 +1,192 @@
+<div tabindex="-1">
+  <div dir="ltr" class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div style="width: 100%;" class="card-headernew text-center success">
+          <button
+            style="color: white;"
+            type="button"
+            class="close pull-right"
+            aria-label="Close"
+            (click)="canceladd($event)"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <i style="padding: 3px;" class="fas fa-trash-alt"></i>
+          Delete User Data -حذف المستخدم
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <div align="center" class="alert-danger2">
+          <h6 style="padding: 10px;" align="center" class="">
+            هل أنت متأكد أنك تريد حذف المستخدم ؟ سيتم حذف المستخدم بشكل نهائي !؟
+          </h6>
+          <h5 style="padding: 10px;" align="center" class="">
+            Are you sure you want to delete this
+          </h5>
+        </div>
+        <hr />
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <div class="card" style="width: 99%; margin-bottom: 11px;">
+              <div class="card-header">
+                <div dir="rtl" align="right">
+                  <label class="col-md-12 control-label" for="email">
+                    <i style="padding: 3px;" class="fas fa-envelope"></i>
+                    البريد الالكتروني - E-mail
+                  </label>
+                </div>
+              </div>
+              <div class="card-body text-primary">
+                <fieldset [disabled]="true">
+                  <div class="form-group">
+                    <h5>{{ email }}</h5>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card" style="width: 99%; margin-bottom: 11px;">
+              <div class="card-header">
+                <div dir="rtl" align="right">
+                  <label class="col-md-12 control-label" for="fullname">
+                    <i style="padding: 3px;" class="fas fa-id-card"></i>
+
+                    الاسم الثلاثي - Full Name
+                  </label>
+                </div>
+              </div>
+              <div class="card-body text-primary">
+                <fieldset [disabled]="true">
+                  <div class="form-group">
+                    <h5>{{ fullname }}</h5>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="width: 99%; margin-bottom: 11px;">
+            <div class="card-header">
+              <div dir="rtl" align="right">
+                <label class="col-md-12 control-label" for="email">
+                  <i
+                    style="padding: 3px;"
+                    class="fas fa-clipboard-list-check"
+                  ></i>
+
+                  صلاحيات المستخدم
+                </label>
+              </div>
+            </div>
+            <div class="card-body text-primary">
+              <fieldset [disabled]="true">
+                <div class="form-group">
+                  <h5
+                    style="text-align: right; padding: 10px;"
+                    *ngFor="let item of allusertype"
+                  >
+                    {{ item }}
+                  </h5>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+          <!-- <div class="card" style="width: 99%; margin-bottom: 11px;">
+            <div class="card-header">
+              <div dir="rtl" align="right">
+                <label class="col-md-12 control-label" for="email">
+                  <i style="padding: 3px;" class="fas fa-clipboard-check"></i>
+
+                  الاستمارات التي يشرف عليها
+                </label>
+              </div>
+            </div>
+            <div class="card-body text-primary">
+              <fieldset [disabled]="true">
+                <div class="form-group">
+                  <h5
+                    style="text-align: right; padding: 10px;"
+                    *ngFor="let item of allistmara"
+                  >
+                    {{ item }}
+                  </h5>
+                </div>
+              </fieldset>
+            </div>
+          </div> -->
+          <div class="card" style="width: 99%; margin-bottom: 11px;">
+            <div class="card-header">
+              <div dir="rtl" align="right">
+                <label class="col-md-12 control-label" for="email">
+                  <i style="padding: 3px;" class="fas fa-clipboard-check"></i>
+
+                  انواع البلاغات التي يشرف عليها
+                </label>
+              </div>
+            </div>
+            <div class="card-body text-primary">
+              <fieldset [disabled]="true">
+                <div class="form-group">
+                  <h5
+                    style="text-align: right; padding: 10px;"
+                    *ngFor="let item of comptype"
+                  >
+                    {{ item }}
+                  </h5>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+          <div class="card" style="width: 99%; margin-bottom: 11px;">
+            <div class="card-header">
+              <div dir="rtl" align="right">
+                <label class="col-md-12 control-label" for="email">
+                  <i style="padding: 3px;" class="fas fa-hospital-symbol"></i>
+
+                  المستشفيات التي يشرف عليها
+                </label>
+              </div>
+            </div>
+            <div class="card-body text-primary">
+              <fieldset [disabled]="true">
+                <div class="form-group">
+                  <h5
+                    style="text-align: right; padding: 10px;"
+                    *ngFor="let item of allmd"
+                  >
+                    {{ item }}
+                  </h5>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+   
+        </div>
+      </div>
+
+      <div class="modal-footer justify-content-center">
+        <div class="form-group">
+          <div class="col-md-12">
+            <span>
+              <button
+                style="margin: 6px;"
+                class="btn btn-success"
+                (click)="canceladd($event)"
+                queryParamsHandling="preserve"
+              >
+                Cancel - تراجع عن حذف المستخدم
+                <i class="fas fa-home"></i>
+              </button>
+              <button class="btn btn-danger" (click)="del()">
+                Delet User Data - حذف المستخدم
+                <i style="padding: 3px;" class="fas fa-trash-alt"></i>
+              </button>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

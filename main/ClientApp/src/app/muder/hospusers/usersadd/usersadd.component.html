@@ -1,0 +1,668 @@
+<div tabindex="-1">
+  <div dir="ltr" class="modal-dialog">
+    <form
+      style="margin-top: 15px"
+      class="form-horizontal"
+      novalidate
+      (ngSubmit)="add()"
+      [formGroup]="Form"
+    >
+      <div class="modal-content">
+        <div class="modal-header">
+          <div style="width: 100%" class="card-headernew text-center success">
+            <i style="padding: 3px" class="fas fa-plus-circle"></i>
+            Add User - أضافة مستخدم
+          </div>
+          <button
+            style="color: white"
+            type="button"
+            class="close pull-left"
+            aria-label="Close"
+            (click)="canceladd($event)"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <div class="row justify-content-center">
+            <div class="card" style="width: 99%; margin-bottom: 11px">
+              <div class="card-header">
+                <div dir="rtl" align="right">
+                  <label class="col-md-12 control-label" for="fullname">
+                    <i style="padding: 3px" class="fas fa-id-card"></i>
+                    الاسم الثلاثي - Full Name
+                  </label>
+                </div>
+              </div>
+              <div class="card-body text-primary">
+                <div class="col-md-12">
+                  <div class="input-icon">
+                    <div
+                      class="form-group has-danger"
+                      [ngClass]="{
+                        'has-error':
+                          (Form.get('FullName').touched ||
+                            Form.get('FullName').dirty) &&
+                          !Form.get('FullName').valid
+                      }"
+                    >
+                      <div class="col-md-12">
+                        <input
+                          class="form-control"
+                          id="fullname"
+                          type="text"
+                          placeholder=" Please Enter  Full Name - يرجى إدخال    الاسم الثلاثي "
+                          formControlName="FullName"
+                          [ngClass]="{
+                            'has-success2':
+                              (Form.get('FullName').touched ||
+                                Form.get('FullName').dirty) &&
+                              Form.get('FullName').valid,
+
+                            'has-error2':
+                              (Form.get('FullName').touched ||
+                                Form.get('FullName').dirty) &&
+                              !Form.get('FullName').valid
+                          }"
+                        />
+                        <div
+                          style="margin-top: 5px"
+                          class="col-md-12 alert alert-danger border border-danger"
+                          *ngIf="
+                            (Form.get('FullName').touched ||
+                              Form.get('FullName').dirty) &&
+                            Form.get('FullName').errors
+                          "
+                        >
+                          <span
+                            style="padding-top: 15px"
+                            *ngIf="Form.get('FullName').errors['required']"
+                          >
+                            Please Enter Full Name - يرجى إدخال الاسم الثلاثي
+                          </span>
+
+                          <span
+                            *ngIf="Form.get('FullName').errors['minlength']"
+                          >
+                            Full Name is more than 3 characters - الاسم الثلاثي
+                            يزيد عن 3 حروف
+                          </span>
+
+                          <span
+                            *ngIf="Form.get('FullName').errors['maxlength']"
+                          >
+                            Full Name is No more than 100 characters - الاسم
+                            الثلاثي لا يزيد عن 100 حرف
+                          </span>
+                          <span
+                            *ngIf="
+                              Form.get('FullName').errors['pattern'] &&
+                              !Form.get('FullName').errors['minlength']
+                            "
+                          >
+                            Please use only English And Arabic characters - يرجى
+                            استخدام الأحرف الإنجليزية و العربية فقط
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card" style="width: 99%; margin-bottom: 11px">
+              <div class="card-header">
+                <div dir="rtl" align="right">
+                  <label class="col-md-12 control-label" for="email">
+                    <i style="padding: 3px" class="fas fa-envelope"></i>
+                    البريد الالكتروني - E-mail
+                  </label>
+                </div>
+              </div>
+              <div class="card-body text-primary">
+                <div class="col-md-12">
+                  <div class="input-icon">
+                    <div
+                      class="form-group has-danger"
+                      [ngClass]="{
+                        'has-error':
+                          (Form.get('email').touched ||
+                            Form.get('email').dirty) &&
+                          !Form.get('email').valid
+                      }"
+                    >
+                      <div class="col-md-12">
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="email"
+                          placeholder=" Please Enter  E-mail - يرجى إدخال  البريد الالكتروني  "
+                          formControlName="email"
+                          autocomplete="email"
+                          [ngClass]="{
+                            'has-success2':
+                              (Form.get('email').touched ||
+                                Form.get('email').dirty) &&
+                              Form.get('email').valid,
+
+                            'has-error2':
+                              (Form.get('email').touched ||
+                                Form.get('email').dirty) &&
+                              !Form.get('email').valid
+                          }"
+                        />
+                        <div
+                          style="margin-top: 5px"
+                          class="col-md-12 alert alert-danger border border-danger"
+                          *ngIf="
+                            (Form.get('email').touched ||
+                              Form.get('email').dirty) &&
+                            Form.get('email').errors
+                          "
+                        >
+                          <span
+                            style="padding-top: 15px"
+                            *ngIf="Form.get('email').errors['required']"
+                          >
+                            Please Enter E-mail - يرجى إدخال البريد الالكتروني
+                          </span>
+
+                          <span *ngIf="Form.get('email').errors['minlength']">
+                            E-mail is more than 6 characters - البريد الالكتروني
+                            يزيد عن 6 حروف
+                          </span>
+
+                          <span *ngIf="Form.get('email').errors['maxlength']">
+                            E-mail is No more than 100 characters - البريد
+                            الالكتروني لا يزيد عن 100 حرف
+                          </span>
+                          <span
+                            *ngIf="
+                              Form.get('email').errors['pattern'] &&
+                              !Form.get('email').errors['minlength']
+                            "
+                          >
+                            عنوان البريد الإلكتروني غير صالح
+                          </span>
+
+                          <p *ngIf="Form.get('email').errors['used']">
+                            البريد الالكتروني مستخدم مسبقا الرجاء أستعادة كلمة
+                            المرور
+                          </p>
+                          <p *ngIf="Form.get('email').errors['used']">
+                            Email is Already Used. Please Restore Your Password
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <app-stringinput
+                label="  رقم الهوية  "
+                placeholder=" يرجى إدخال  رقم الهوية "
+                id="IdNumber"
+                [control]="$any(Form).get('IdNumber')"
+                type="number"
+                patternmes="يرجى
+                استخدام   الارقام فقط"
+              >
+              </app-stringinput>
+            </div>
+            <div class="col-md-12">
+              <app-stringinput
+                label="  رقم جوال للتواصل "
+                placeholder=" يرجى إدخال  رقم جوال للتواصل"
+                id="PatientPhone"
+                [control]="$any(Form).get('UserPhone')"
+                type="number"
+                patternmes="يرجى
+                استخدام   الارقام فقط"
+              >
+              </app-stringinput>
+            </div>
+            <div class="col-12">
+              <div class="card" style="width: 99%; margin-bottom: 11px">
+                <div class="card-header">
+                  <div dir="rtl" align="center">
+                    <label class="col-md-12 control-label" for="ComplainNumber">
+                      الرجاء أختيار تاريخ الميلاد
+                    </label>
+                  </div>
+                </div>
+                <div class="card-body text-primary">
+                  <div class="input-icon">
+                    <div
+                      class="form-group has-danger"
+                      [ngClass]="{
+                        'has-error':
+                          (Form.get('EnterDateTime').touched ||
+                            Form.get('EnterDateTime').dirty) &&
+                          !Form.get('EnterDateTime').valid
+                      }"
+                    >
+                      <hijri-gregorian-datepicker
+                        [placeHolder]="'سنة/شهر/يوم'"
+                        [label]="'  '"
+                        [(selectedDate)]="EnterDateTime"
+                        [isRequired]="true"
+                        [GregLabel]="'ميلادي'"
+                        [hijriLabel]="'هجري'"
+                        [selectedDateType]="selectedDateType"
+                        #interdate
+                        (selectedDateChange)="onDateSelect($event)"
+                      >
+                      </hijri-gregorian-datepicker>
+
+                      <div
+                        style="margin-top: 5px"
+                        class="col-md-12 alert alert-danger border border-danger"
+                        *ngIf="
+                          (Form.get('EnterDateTime').touched ||
+                            Form.get('EnterDateTime').dirty) &&
+                          Form.get('EnterDateTime').errors
+                        "
+                      >
+                        <span
+                          style="padding-top: 15px"
+                          *ngIf="Form.get('EnterDateTime').errors['required']"
+                        >
+                          يرجى إدخال تاريخ الميلاد
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card" style="width: 99%; margin-bottom: 11px">
+              <div class="card-header">
+                <div dir="rtl" align="right">
+                  <label class="col-md-12 control-label" for="Password">
+                    <i style="padding: 3px" class="fas fa-lock"></i>
+                    كلمة المرور - Password
+                  </label>
+                </div>
+              </div>
+              <div class="card-body text-primary">
+                <div class="col-md-12">
+                  <div class="input-icon">
+                    <div
+                      class="form-group has-danger"
+                      [ngClass]="{
+                        'has-error':
+                          (Form.get('Password').touched ||
+                            Form.get('Password').dirty) &&
+                          !Form.get('Password').valid
+                      }"
+                    >
+                      <div class="col-md-12">
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="Password"
+                          placeholder=" Please Enter   Password - يرجى إدخال   كلمة المرور "
+                          formControlName="Password"
+                          autocomplete="new-password"
+                          [ngClass]="{
+                            'has-success2':
+                              (Form.get('Password').touched ||
+                                Form.get('Password').dirty) &&
+                              Form.get('Password').valid,
+
+                            'has-error2':
+                              (Form.get('Password').touched ||
+                                Form.get('Password').dirty) &&
+                              !Form.get('Password').valid
+                          }"
+                        />
+                        <div
+                          style="margin-top: 5px"
+                          class="col-md-12 alert alert-danger border border-danger"
+                          *ngIf="
+                            (Form.get('Password').touched ||
+                              Form.get('Password').dirty) &&
+                            Form.get('Password').errors
+                          "
+                        >
+                          <span
+                            style="padding-top: 15px"
+                            *ngIf="Form.get('Password').errors['required']"
+                          >
+                            Please Enter Password - يرجى إدخال كلمة المرور
+                          </span>
+
+                          <span
+                            *ngIf="Form.get('Password').errors['minlength']"
+                          >
+                            Password is 8 characters and up - كلمة المرور 8 أحرف
+                            وما فوق
+                          </span>
+
+                          <span
+                            *ngIf="Form.get('Password').errors['maxlength']"
+                          >
+                            Password is No more than 100 characters - كلمه
+                            المرور لا تزيد عن 100 حرف
+                          </span>
+                          <p
+                            *ngIf="
+                              Form.get('Password').errors['pattern'] &&
+                              !Form.get('Password').errors['minlength']
+                            "
+                          >
+                            كلمة المرور يجب ان تتكون من 8 حروف منها رقم وحرف
+                            كبير ورمز
+                          </p>
+                          <p
+                            *ngIf="
+                              Form.get('Password').errors['pattern'] &&
+                              !Form.get('Password').errors['minlength']
+                            "
+                          >
+                            password at least eight characters, including at
+                            least one number and includes both lower and
+                            uppercase letters and special character
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card" style="width: 99%; margin-bottom: 11px">
+              <div class="card-header">
+                <div dir="rtl" align="right">
+                  <label class="col-md-12 control-label" for="ConfirmPassword">
+                    <i style="padding: 3px" class="fas fa-lock"></i>
+                    تأكيد كلمة المرور - Confirm Password
+                  </label>
+                </div>
+              </div>
+              <div class="card-body text-primary">
+                <div class="col-md-12">
+                  <div class="input-icon">
+                    <div
+                      class="form-group has-danger"
+                      [ngClass]="{
+                        'has-error':
+                          (Form.get('ConfirmPassword').touched ||
+                            Form.get('ConfirmPassword').dirty) &&
+                          !Form.get('ConfirmPassword').valid
+                      }"
+                    >
+                      <div class="col-md-12">
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="ConfirmPassword"
+                          autocomplete="new-password"
+                          placeholder=" Please Enter  ConfirmPassword  -  يرجى إدخال تأكيد كلمة المرور"
+                          formControlName="ConfirmPassword"
+                          [ngClass]="{
+                            'has-success2':
+                              (Form.get('ConfirmPassword').touched ||
+                                Form.get('ConfirmPassword').dirty) &&
+                              Form.get('ConfirmPassword').valid,
+
+                            'has-error2':
+                              (Form.get('ConfirmPassword').touched ||
+                                Form.get('ConfirmPassword').dirty) &&
+                              !Form.get('ConfirmPassword').valid
+                          }"
+                        />
+                        <div
+                          style="margin-top: 5px"
+                          class="col-md-12 alert alert-danger border border-danger"
+                          *ngIf="
+                            (Form.get('ConfirmPassword').touched ||
+                              Form.get('ConfirmPassword').dirty) &&
+                            Form.get('ConfirmPassword').errors
+                          "
+                        >
+                          <span
+                            style="padding-top: 15px"
+                            *ngIf="
+                              Form.get('ConfirmPassword').errors['required']
+                            "
+                          >
+                            Please Enter Confirm Password - يرجى إدخال تأكيد
+                            كلمة المرور
+                          </span>
+
+                          <span
+                            *ngIf="
+                              Form.get('ConfirmPassword').errors['minlength']
+                            "
+                          >
+                            Password is 8 characters and up - تأكيد كلمة المرور
+                            8 أحرف وما فوق
+                          </span>
+
+                          <span
+                            *ngIf="
+                              Form.get('ConfirmPassword').errors['maxlength']
+                            "
+                          >
+                            Password is No more than 100 characters - تأكيد كلمة
+                            المرور لا تزيد عن 100 حرف
+                          </span>
+                          <p
+                            *ngIf="
+                              Form.get('ConfirmPassword').errors['pattern'] &&
+                              !Form.get('ConfirmPassword').errors['minlength']
+                            "
+                          >
+                            تأكيد كلمة المرور يجب ان تتكون من 8 حروف منها رقم
+                            وحرف كبير ورمز
+                          </p>
+                          <p
+                            *ngIf="
+                              Form.get('ConfirmPassword').errors['pattern'] &&
+                              !Form.get('ConfirmPassword').errors['minlength']
+                            "
+                          >
+                            password at least eight characters, including at
+                            least one number and includes both lower and
+                            uppercase letters and special character
+                          </p>
+                          <p
+                            class="help-block"
+                            *ngIf="
+                              !Form.get('ConfirmPassword').errors['required'] &&
+                              Form.get('ConfirmPassword').errors['compare']
+                            "
+                          >
+                            Password And Password Confirmation Don't Match
+                          </p>
+                          <p
+                            class="help-block"
+                            *ngIf="
+                              !Form.get('ConfirmPassword').errors['required'] &&
+                              Form.get('ConfirmPassword').errors['compare']
+                            "
+                          >
+                            كلمة المرور وتأكيد كلمة المرور غير متطابقتين
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card" style="width: 99%; margin-bottom: 11px">
+              <div class="card-header">
+                <div dir="rtl" align="right">
+                  <label class="col-md-12 control-label" for="Usersclassrooms">
+                    <i style="padding: 3px" class="fas fa-hospital-symbol"></i>
+                    يرجى أختيار الفصل الدراسي
+                  </label>
+                </div>
+              </div>
+              <div class="card-body text-primary">
+                <div class="col-md-12">
+                  <div class="input-icon">
+                    <div
+                      dir="rtl"
+                      style="margin-top: 7px"
+                      class="form-group has-danger"
+                      [ngClass]="{
+                        'has-error':
+                          (Form.get('Usersclassrooms').touched ||
+                            Form.get('Usersclassrooms').dirty) &&
+                          !Form.get('Usersclassrooms').valid
+                      }"
+                    >
+                      <div class="col-md-12">
+                        <ng-select
+                          [dropdownPosition]="'auto'"
+                          [items]="allclass"
+                          [searchable]="true"
+                          [multiple]="true"
+                          [selectOnTab]="true"
+                          bindLabel="text"
+                          bindValue="value"
+                          id="Usersclassrooms"
+                          placeholder=" يرجى أختيار الفصل الدراسي"
+                          formControlName="Usersclassrooms"
+                        >
+                        </ng-select>
+
+                        <div
+                          style="margin-top: 5px"
+                          class="col-md-12 alert alert-danger border border-danger"
+                          *ngIf="
+                            (Form.get('Usersclassrooms').touched ||
+                              Form.get('Usersclassrooms').dirty) &&
+                            Form.get('Usersclassrooms').errors
+                          "
+                        >
+                          <span
+                            style="padding-top: 15px"
+                            *ngIf="
+                              Form.get('Usersclassrooms').errors['required']
+                            "
+                          >
+                            يرجى أختيار الفصل الدراسي
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card" style="width: 99%; margin-bottom: 11px">
+              <div class="card-header">
+                <div dir="rtl" align="right">
+                  <label class="col-md-12 control-label" for="clinic">
+                    <i style="padding: 3px" class="fas fa-hospital-symbol"></i>
+                    يرجى أختيار المادة التعليمية
+                  </label>
+                </div>
+              </div>
+              <div class="card-body text-primary">
+                <div class="col-md-12">
+                  <div class="input-icon">
+                    <div
+                      dir="rtl"
+                      style="margin-top: 7px"
+                      class="form-group has-danger"
+                      [ngClass]="{
+                        'has-error':
+                          (Form.get('usersedumaterials').touched ||
+                            Form.get('usersedumaterials').dirty) &&
+                          !Form.get('usersedumaterials').valid
+                      }"
+                    >
+                      <div class="col-md-12">
+                        <ng-select
+                          [dropdownPosition]="'auto'"
+                          [items]="alledue"
+                          [searchable]="true"
+                          [multiple]="true"
+                          [selectOnTab]="true"
+                          id="usersedumaterials"
+                          bindLabel="text"
+                          bindValue="value"
+                          placeholder="  يرجى أختيار  المادة التعليمية                          "
+                          formControlName="usersedumaterials"
+                        >
+                        </ng-select>
+
+                        <div
+                          style="margin-top: 5px"
+                          class="col-md-12 alert alert-danger border border-danger"
+                          *ngIf="
+                            (Form.get('usersedumaterials').touched ||
+                              Form.get('usersedumaterials').dirty) &&
+                            Form.get('usersedumaterials').errors
+                          "
+                        >
+                          <span
+                            style="padding-top: 15px"
+                            *ngIf="
+                              Form.get('usersedumaterials').errors['required']
+                            "
+                          >
+                            يرجى أختيار المادة التعليمية
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div algin="center" class="row text-center justify-content-center">
+              <div algin="center" class="text-center justify-content-center">
+                <!-- <ngx-recaptcha2 #captchaElem [siteKey]="sitekey" [size]="size" [hl]="lang" [theme]="theme"
+                  [type]="type" formControlName="recaptcha">
+                </ngx-recaptcha2> -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer justify-content-center">
+          <div class="form-group">
+            <div class="col-md-12">
+              <span>
+                <button
+                  style="margin: 6px"
+                  class="btn btn-danger"
+                  (click)="canceladd($event)"
+                  queryParamsHandling="preserve"
+                >
+                  Cancel - الغاء
+                  <i class="fas fa-window-close"></i>
+                </button>
+                <button
+                  class="btn btn-success"
+                  type="submit"
+                  [disabled]="!Form.valid"
+                >
+                  Add User - أضافة المستخدم
+                  <i style="padding: 3px" class="fas fa-plus-circle"></i>
+                </button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!--<p>Form State: {{Form.valid?'VALID':'INVALID'}}</p>
+<p>{{Form.value | json}}</p>-->

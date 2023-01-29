@@ -1,0 +1,17 @@
+<div dir="ltr">
+  <ngx-charts-advanced-pie-chart
+    class="chart-container"
+    [animations]="animations"
+    [tooltipDisabled]="tooltipDisabled"
+    [view]="view"
+    [scheme]="colorScheme"
+    [results]="single"
+    [gradient]="gradient"
+    [label]="label"
+    (select)="onSelectt($event)"
+    (activate)="onActivatee($event)"
+    (deactivate)="onDeactivatee($event)"
+    (window:resize)="onResize($event)"
+  >
+  </ngx-charts-advanced-pie-chart>
+</div>

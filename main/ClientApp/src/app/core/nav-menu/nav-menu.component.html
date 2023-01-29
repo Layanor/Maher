@@ -1,0 +1,369 @@
+<div class="align-items-center no-print" style="margin-top: 5px">
+  <header>
+    <div class="container-fluid">
+      <div class="row align-items-center">
+        <div align="center" class="col-lg-12 col-xs-12 col-md-12">
+          <div class="d-lg-block">
+            <nav
+              class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light mb-1 fixed"
+              style="box-shadow: none !important"
+            >
+              <div
+                class="collapse navbar-collapse"
+                id="navbarSupportedContent"
+                style="padding: 13px"
+              >
+                <div class="col-12">
+                  <div
+                    class="col-md-3 animate__animated animate__fadeInLeft"
+                    style="float: right; right: 1px"
+                  >
+                    <a
+                      [routerLink]="['/']"
+                      class="animated fadeInRight"
+                      title=" برنامج تقيم الطلبة "
+                    >
+                      <img
+                        style="
+                          float: right;
+                          margin-right: 22px;
+                          height: 70px;
+                          width: 150px;
+                        "
+                        alt="  برنامج تقيم الطلبة  "
+                        class="d-none d-lg-block"
+                        src="../../assets/images/9937.png"
+                      />
+                    </a>
+                  </div>
+                  <div class="col-md-6"></div>
+                  <div
+                    class="col-md-3 animate__animated animate__fadeInRight"
+                    style="float: left; left: 1px"
+                  >
+                    <div class="d-lg-block">
+                      <a
+                        href="http://vision2030.gov.sa"
+                        class=".d-none .d-lg-block .d-xl-block animated fadeInLeft"
+                        title="2030"
+                      >
+                        <img
+                          style="float: left; margin-left: 1px"
+                          alt="2030"
+                          class="d-none d-lg-block"
+                          src="../../assets/images/moh-2030.png"
+                        />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="clr"></div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+<ng-container class="animated fadeInLeft" style="position: relative">
+  <mdb-navbar
+    dir="ltr"
+    SideClass="navbar navbar-expand-lg navbar-expand-md navbar-dark green-color fixed scrolling-navbar success-color-dark "
+    [containerInside]="false"
+  >
+    <div class="no-print">
+      <mdb-navbar-brand
+        style="padding-left: 15px; float: left"
+        class="no-print"
+      >
+        <a class="navbar-brand" [routerLink]="['/']">
+          <img src="../../assets/images/mohnav.png" height="35" alt="moh"
+        /></a>
+      </mdb-navbar-brand>
+    </div>
+
+    <links class="no-print" style="justify-content: center">
+      <ul
+        style="float: right; justify-content: right"
+        class="navbar-nav no-print"
+      >
+        <li class="nav-item">
+          <app-login-menu></app-login-menu>
+        </li>
+      </ul>
+
+      <ul
+        class="navbar-nav no-print"
+        style="margin-left: 3px"
+        *ngIf="isAuthenticated | async"
+      >
+        <li
+          *ngIf="iscalldir | async"
+          dir="rtl"
+          class="nav-item dropdown no-print"
+          dropdown
+          appDropOpen
+        >
+          <a
+            dropdownToggle
+            class="nav-link dropdown-toggle"
+            mdbWavesEffect
+            title="  الادوات  "
+          >
+            <mdb-icon fas icon="cog"></mdb-icon> الادوات
+            <span class="caret"></span>
+          </a>
+          <ul
+            *dropdownMenu
+            class="dropdown-menu dropdown-menu-right dropdown dropdown-primary a-various-dropdown fadeInDropdown fadeInDropdown"
+            role="menu"
+            style="width: auto; right: -11px; left: auto"
+          >
+            <li
+              *ngIf="iscalldir | async"
+              class="nav-item"
+              [routerLinkActive]="['link-active']"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+              <a
+                style="text-align: right"
+                mdbWavesEffect
+                class="dropdown-item waves-light float-right nav-link2"
+                [routerLink]="['/all/allcomp/']"
+                title=" البحث"
+              >
+                <mdb-icon fas icon="search"></mdb-icon> البحث
+              </a>
+            </li>
+            <li
+              *ngIf="iscalldir | async"
+              class="nav-item"
+              [routerLinkActive]="['link-active']"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+              <a
+                style="text-align: right"
+                mdbWavesEffect
+                class="dropdown-item waves-light float-right nav-link2"
+                [routerLink]="['/all/stat/']"
+                title=" الاحصائية"
+              >
+                <mdb-icon fas icon="poll"></mdb-icon>الاحصائية
+              </a>
+            </li>
+            <li
+              *ngIf="(useremail | async) == 'aymalharthi2@moh.gov.sa'"
+              class="nav-item"
+              [routerLinkActive]="['link-active']"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+              <a
+                style="text-align: right"
+                mdbWavesEffect
+                class="dropdown-item waves-light float-right nav-link2"
+                [routerLink]="['/all/userstat/']"
+                title=" احصائية المستخدمين"
+              >
+                <mdb-icon fas icon="users"></mdb-icon> احصائية المستخدمين
+              </a>
+            </li>
+            <li
+              *ngIf="iscalldir | async"
+              class="nav-item"
+              [routerLinkActive]="['link-active']"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+              <a
+                style="text-align: right"
+                mdbWavesEffect
+                class="dropdown-item waves-light float-right nav-link2"
+                [routerLink]="['/mis']"
+                title=" سوء المعاملة"
+              >
+                <mdb-icon fas icon="search"></mdb-icon> سوء المعاملة
+              </a>
+            </li>
+            <li
+              *ngIf="iscalldir | async"
+              class="nav-item"
+              [routerLinkActive]="['link-active']"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+              <a
+                style="text-align: right"
+                mdbWavesEffect
+                class="dropdown-item waves-light float-right nav-link2"
+                [routerLink]="['/low']"
+                title="  نفص الادوية"
+              >
+                <mdb-icon fas icon="prescription"></mdb-icon> نفص الادوية
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li
+          *ngIf="isAdmin | async"
+          dir="rtl"
+          class="nav-item dropdown no-print"
+          dropdown
+          appDropOpen
+        >
+          <a
+            dropdownToggle
+            class="nav-link dropdown-toggle"
+            mdbWavesEffect
+            title=" البيانات الأساسية  "
+          >
+            <mdb-icon fas icon="cog"></mdb-icon> البيانات الأساسية
+            <span class="caret"></span>
+          </a>
+          <ul
+            *dropdownMenu
+            class="dropdown-menu dropdown-menu-right dropdown dropdown-primary a-various-dropdown fadeInDropdown fadeInDropdown"
+            role="menu"
+            style="width: auto; right: -11px; left: auto"
+          >
+            <li
+              *ngIf="isAdmin | async"
+              class="nav-item"
+              [routerLinkActive]="['link-active']"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+              <a
+                style="text-align: right"
+                mdbWavesEffect
+                class="dropdown-item waves-light float-right nav-link2"
+                [routerLink]="['muder/hospusers/2']"
+                title=" أدارة المدرسين "
+              >
+                <i class="fas fa-users"></i> أدارة المدرسين
+              </a>
+            </li>
+            <li
+              *ngIf="isAdmin | async"
+              class="nav-item"
+              [routerLinkActive]="['link-active']"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+              <a
+                style="text-align: right"
+                mdbWavesEffect
+                class="dropdown-item waves-light float-right nav-link2"
+                [routerLink]="['muder/hospusers/3']"
+                title=" أدارة الطلاب "
+              >
+                <i class="fas fa-users"></i> أدارة الطلاب
+              </a>
+            </li>
+            <li
+              *ngIf="isAdmin | async"
+              class="nav-item"
+              [routerLinkActive]="['link-active']"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+              <a
+                style="text-align: right"
+                mdbWavesEffect
+                class="dropdown-item waves-light float-right nav-link2"
+                [routerLink]="['muder/hospusers/1']"
+                title=" أدارة الادارين "
+              >
+                <i class="fas fa-users"></i> أدارة الاداريين
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li
+          *ngIf="isAdmin | async"
+          dir="rtl"
+          class="nav-item dropdown no-print"
+          dropdown
+          appDropOpen
+        >
+          <a
+            dropdownToggle
+            class="nav-link dropdown-toggle"
+            mdbWavesEffect
+            title=" المهام الأدارية "
+          >
+            <mdb-icon fas icon="tasks"></mdb-icon> المهام الأدارية
+            <span class="caret"></span>
+          </a>
+          <ul
+            *dropdownMenu
+            class="dropdown-menu dropdown-menu-right dropdown dropdown-primary a-various-dropdown fadeInDropdown fadeInDropdown"
+            role="menu"
+            style="width: auto; right: -11px; left: auto"
+          >
+            <li
+              *ngIf="isAdmin | async"
+              class="nav-item"
+              [routerLinkActive]="['link-active']"
+            >
+              <a
+                style="text-align: right"
+                mdbWavesEffect
+                class="dropdown-item waves-light float-right nav-link2"
+                [routerLink]="['muder/schools']"
+                title=" أدارة المدارس "
+              >
+                <i class="fas fa-hospital-alt"></i> أدارة المدارس
+              </a>
+            </li>
+            <li
+              *ngIf="isAdmin | async"
+              class="nav-item"
+              [routerLinkActive]="['link-active']"
+            >
+              <a
+                style="text-align: right"
+                mdbWavesEffect
+                class="dropdown-item waves-light float-right nav-link2"
+                [routerLink]="['muder/classroom']"
+                title=" أدارة الفصول الدراسية "
+              >
+                <mdb-icon size="lg" far icon="list-alt"></mdb-icon>
+                أدارة الفصول الدراسية
+              </a>
+            </li>
+
+            <li
+              *ngIf="isAdmin | async"
+              class="nav-item"
+              [routerLinkActive]="['link-active']"
+            >
+              <a
+                style="text-align: right"
+                mdbWavesEffect
+                class="dropdown-item waves-light float-right nav-link2"
+                [routerLink]="['muder/edumaterial']"
+                title=" أدارة المواد التعليمية "
+              >
+                <mdb-icon size="lg" far icon="file-signature"></mdb-icon>
+                أدارة المواد التعليمية
+              </a>
+            </li>
+            <li
+              *ngIf="isAdmin | async"
+              class="nav-item"
+              [routerLinkActive]="['link-active']"
+            >
+              <a
+                style="text-align: right"
+                mdbWavesEffect
+                class="dropdown-item waves-light float-right nav-link2"
+                [routerLink]="['muder/evaluation']"
+                title=" أدارة بنود التقييم "
+              >
+                <mdb-icon size="lg" far icon="file-signature"></mdb-icon>
+                أدارة بنود التقييم
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </links>
+  </mdb-navbar>
+</ng-container>

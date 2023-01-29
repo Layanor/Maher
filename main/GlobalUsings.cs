@@ -1,0 +1,37 @@
+﻿global using infra.Data;
+global using Dapper;
+
+global using Microsoft.AspNetCore.Identity;
+global using System.ComponentModel.DataAnnotations;
+global using System.Security.Claims;
+global using Microsoft.AspNetCore.Authentication;
+global using Microsoft.EntityFrameworkCore;
+global using Microsoft.AspNetCore.Diagnostics;
+global using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
+global using Microsoft.AspNetCore.Authorization;
+global using Microsoft.AspNetCore.Mvc;
+
+global using Microsoft.AspNetCore.Mvc.RazorPages;
+global using System.Diagnostics;
+global using AutoMapper;
+global using Syncfusion.EJ2.Base;
+global using System.Text.RegularExpressions;
+global using Microsoft.AspNetCore.WebUtilities;
+global using System.Text;
+global using System.Text.Encodings.Web;
+global using Microsoft.AspNetCore.Identity.UI.Services;
+global using infra.Extensions;
+global using System.Collections;
+global using infra.ViewModels;
+global using main.Controllers.infra;
+global using infra.Models.error;
+global using System.Globalization;
+global using infra;
+global using System.Linq.Expressions;
+global using infra.Models;
+global using infra.Models.infra;
+global using Microsoft.AspNetCore.JsonPatch;
+global using Microsoft.AspNetCore.Antiforgery;
+global using infra.Repo;
+global using main.Helpers;
+global using Serilog;

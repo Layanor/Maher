@@ -1,0 +1,103 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "forceConsistentCasingInFileNames": true,
+    "strict": false,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": false,
+    "noImplicitReturns": false,
+    "noFallthroughCasesInSwitch": true,
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "ES2022",
+    "module": "es2020",
+    "lib": [
+      "es2020",
+      "es2018",
+      "dom"
+    ],
+    "skipLibCheck": true,
+    "useDefineForClassFields": false
+  },
+  "exclude": [
+    "node_modules",
+    "./node_modules",
+    "./node_modules/*",
+    "./node_modules/@types/node/index.d.ts",
+    "wwwroot"
+  ],
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true,
+    "skipLibCheck": true,
+    "compilationMode": "full"
+  }
+}
+
+// {
+//   "compileOnSave": false,
+//   "compilerOptions": {
+//     "experimentalDecorators": true,
+//     "baseUrl": "./",
+//     "outDir": "./dist/out-tsc",
+//     "forceConsistentCasingInFileNames": true,
+//     "strict": false,
+//     "noImplicitReturns": false,
+//     "noFallthroughCasesInSwitch": true,
+//     "sourceMap": true,
+//     "declaration": false,
+//     "downlevelIteration": true,
+//     "moduleResolution": "node",
+//     "importHelpers": true,
+//     "target": "es2018",
+//     "module": "esnext",
+//     "lib": [
+//       "es2018",
+//       "es2015",
+//       "dom"
+//     ],
+//     "types": [],
+//     "skipLibCheck": true
+//   },
+//   "exclude": [
+//     "node_modules",
+//     "./node_modules",
+//     "./node_modules/*",
+//     "./node_modules/@types/node/index.d.ts",
+//     "wwwroot"
+//   ],
+//   "angularCompilerOptions": {
+//     "enableI18nLegacyMessageIdFormat": false,
+//     "strictInjectionParameters": true,
+//     "strictInputAccessModifiers": true,
+//     "strictTemplates": true,
+//     "skipLibCheck": true,
+//     "enableIvy": true,
+//   "compilationMode": "partial"
+//   }
+// }
+// {
+//   "files": [],
+//   "references": [
+//     {
+//       "path": "./src/tsconfig.app.json"
+//     },
+//     {
+//       "path": "./src/tsconfig.spec.json"
+//     },
+//     {
+//       "path": "./src/tsconfig.server.json"
+//     },
+//     {
+//       "path": "./e2e/tsconfig.e2e.json"
+//     }
+//   ]
+// }

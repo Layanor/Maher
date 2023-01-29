@@ -1,0 +1,100 @@
+<head>
+  <title>{{ titel }}</title>
+</head>
+<div #element1>
+  <div align="center" class="panel panel-default line" style="margin-top: 10px">
+    <div class="panel-heading panel-title">
+      <div align="center">
+        <h3>{{ titel }}</h3>
+      </div>
+    </div>
+    <div>
+      <ejs-grid
+        #grid
+        id="grid"
+        [enableHover]="false"
+        [columns]="columns"
+        height="99%"
+        width="99%"
+        [enablePersistence]="true"
+        printMode="CurrentPage"
+        (printComplete)="printComplete()"
+        allowExcelExport="true"
+        enableRtl="true"
+        locale="ar-AE"
+        allowTextWrap="true"
+        showColumnMenu="true"
+        [showColumnChooser]="true"
+        [dataSource]="datamanager"
+        [editSettings]="editSettings"
+        [contextMenuItems]="contextMenuItems"
+        [allowReordering]="true"
+        [allowSorting]="true"
+        [sortSettings]="sortSettings"
+        [allowGrouping]="true"
+        [allowFiltering]="true"
+        [filterSettings]="filterSettings"
+        [allowPaging]="true"
+        [pageSettings]="pageSettings"
+        [allowSelection]="true"
+        [allowResizing]="false"
+        [gridLines]="gridLines"
+        [toolbar]="toolbarOptions"
+        [allowPdfExport]="true"
+        [textWrapSettings]="wrapSettings"
+        [rowHeight]="60"
+        (created)="created($event)"
+        (commandClick)="commandClick($event)"
+        (toolbarClick)="toolbarClickHandler($event)"
+        (queryCellInfo)="queryCellInfo($event)"
+        (columnMenuClick)="columnMenuClick($event)"
+        (dataBound)="dataBound($event)"
+        (actionFailure)="onActionFailure($event)"
+        (rowDataBound)="rowDataBound($event)"
+        (load)="load($event)"
+        (actionBegin)="actionbegin($event)"
+        (dataStateChange)="dataStateChange($event)"
+        (dataSourceChange)="dataSourceChange($event)"
+        (dataSourceChanged)="dataSourceChanged($event)"
+        (beforeDataBound)="beforeDataBound($event)"
+        (actionComplete)="actionComplete($event)"
+      >
+        <!-- <e-columns>
+           <e-column
+            field="id"
+            [visible]="false"
+            [allowGrouping]="false"
+            [showColumnMenu]="false"
+            minWidth="100"
+            width="100"
+            type="number"
+            maxWidth="100"
+            headerText="ID"
+            textAlign="Right"
+            isPrimaryKey="true"
+            [lockColumn]="true"
+            [allowEditing]="false"
+            [allowSearching]="false"
+            [isIdentity]="true"
+          >
+          </e-column>
+
+          <e-column
+            field="jobs"
+            headerText="المهام"
+            minWidth="100"
+            width="100"
+            [commands]="commands"
+            [allowEditing]="false"
+            [allowFiltering]="false"
+            [allowSorting]="false"
+            [allowSearching]="false"
+            [allowGrouping]="false"
+            [showColumnMenu]="false"
+          ></e-column>
+        </e-columns> -->
+      </ejs-grid>
+    </div>
+    <hr />
+  </div>
+</div>

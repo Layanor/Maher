@@ -1,0 +1,54 @@
+<div class="card " style="width: 99%; margin-bottom: 11px">
+
+  <div class="card-header">
+    <div dir="rtl" align="center">
+      <label class="col-md-12 control-label" for="medcenter">
+        {{label}}
+      </label>
+    </div>
+  </div>
+  <div class="card-body text-primary">
+    <div class="col-md-12">
+      <div class="input-icon">
+        <div dir="rtl" style="margin-top: 7px " class="form-group has-danger" [ngClass]="{'has-error':
+      (control.touched ||
+      control.dirty) &&
+      !control.valid }">
+          <div class="col-md-12">
+
+            <ng-select [dropdownPosition]="'right' " [items]="vals " [searchable]="true" [multiple]="false"
+              [selectOnTab]="true" bindLabel="viewValue" bindValue="value" id={{id}} placeholder={{placeholder}}
+              [formControl]="control" [ngClass]="
+                   {'has-success3':
+                   (control.touched   ||
+                   control.dirty) &&
+                   control.valid,
+
+                   'has-error3' :
+                    (control.touched ||
+                    control.dirty) &&
+                     !control.valid}">
+
+            </ng-select>
+            <div style="text-align: right; margin-top: 5px" class="col-md-12 alert alert-danger border border-danger"
+              *ngIf="
+                (control.touched ||
+                control.dirty) &&
+                control.errors">
+
+              <span style="padding-top: 15px" *ngIf="
+            control.errors['required']">
+
+                يرجى اختيار التقيم
+              </span>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>

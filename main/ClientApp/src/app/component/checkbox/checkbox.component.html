@@ -1,0 +1,36 @@
+<div class="card" style="width: 99%; margin-bottom: 11px;">
+  <div class="card-header">
+    <div dir="rtl" align="center">
+      <label class="col-md-12 control-label">
+        {{ label }}
+      </label>
+    </div>
+  </div>
+  <div class="card-body text-primary">
+    <div class="form-check form-check-inline">
+      <label style="color: darkgreen; font-weight: bold;">
+        <input
+          style="border-radius: unset;"
+          [formControl]="control"
+          type="checkbox"
+          class="option-input radio"
+          name="{{ id }}"
+          id="{{ id }}"
+          [value]="true"
+        />
+        {{ label1 }}
+      </label>
+    </div>
+
+    <div
+      style="text-align: right; margin-top: 5px;"
+      class="col-md-12 alert alert-danger border border-danger"
+      *ngIf="(control.touched || control.dirty) && control.errors"
+    >
+      <span style="padding-top: 15px;" *ngIf="control.errors['required']">
+        الرجاء أختيار التقيم
+      </span>
+    </div>
+  </div>
+</div>
+<!-- (change)="handleChange($event)" -->

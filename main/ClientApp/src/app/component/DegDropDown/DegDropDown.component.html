@@ -1,0 +1,152 @@
+<div class="card" style="width: 99%; margin-bottom: 11px;">
+  <div class="card-header">
+    <div dir="rtl" align="center">
+      <label class="col-md-12 control-label" for="medcenter">
+        {{ label }}
+      </label>
+    </div>
+  </div>
+  <div class="card-body text-primary">
+    <div class="col-md-12">
+      <div class="input-icon">
+        <div dir="rtl"
+             style="margin-top: 7px;"
+             class="form-group has-danger"
+             [ngClass]="{
+            'has-error': (control.touched || control.dirty) && !control.valid
+          }">
+          <div class="col-md-12">
+            <ng-select [readonly]="readonly"
+                       (change)="onChange($event)"
+                       [dropdownPosition]="'bottom'"
+                       [items]="vals"
+                       [searchable]="true"
+                       [multiple]="false"
+                       [selectOnTab]="true"
+                       bindLabel="text"
+                       bindValue="value"
+                       id="{{ id }}"
+                       placeholder="{{ placeholder }}"
+                       [formControl]="control"
+                       [ngClass]="{
+                'has-success3':
+                  (control.touched || control.dirty) && control.valid,
+
+                'has-error3':
+                  (control.touched || control.dirty) && !control.valid
+              }">
+            </ng-select>
+            <div style="text-align: right; margin-top: 5px;"
+                 class="col-md-12 alert alert-danger border border-danger"
+                 *ngIf="(control.touched || control.dirty) && control.errors">
+              <span style="padding-top: 15px;"
+                    *ngIf="control.errors['required']">
+                يرجى اختيار {{ label }}
+              </span>
+              <span *ngIf="control.errors['max']">
+                البيانات المدخلة غير صحيحة - تم ادخال
+                {{ control.errors.max.actual }}
+                يجب ان لا تزيد عن
+                {{ control.errors.max.max }}
+              </span>
+              <span *ngIf="control.errors['min']">
+                البيانات المدخلة غير صحيحة - تم ادخال
+                {{ control.errors.min.actual }}
+                يجب ان لا تقل عن
+                {{ control.errors.min.min }}
+              </span>
+            </div>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="card " style="width: 99%; margin-bottom: 11px">
+
+  <div class="card-header">
+    <div dir="rtl" align="center">
+      <label class="col-md-12 control-label" for="fullname">الاسم الثلاثي - Full Name</label>
+    </div>
+  </div>
+  <div class="card-body text-primary">
+    <div class="col-md-12">
+      <div class="input-icon">
+        <div class="form-group has-danger" [ngClass]="{'has-error':
+               (control.touched ||
+               control.dirty) &&
+               !control.valid }">
+
+
+          <div class="col-md-12">
+
+
+            <input class="form-control " id="fullname" type="number" min="0" max="2"
+              placeholder=" Please Enter  Full Name - يرجى إدخال    الاسم الثلاثي " [formControl]="control" [ngClass]="
+                   {'has-success2':
+                   (control.touched   ||
+                   control.dirty) &&
+                   control.valid,
+
+                   'has-error2' :
+                    (control.touched ||
+                    control.dirty) &&
+                     !control.valid}">
+            <div style="text-align: right; margin-top: 5px" class="col-md-12 alert alert-danger border border-danger"
+              *ngIf="
+                  (control.touched ||
+                  control.dirty) &&
+                  control.errors">
+
+              <span style="padding-top: 15px" *ngIf="
+              control.errors['required']">
+
+                يرجى إدخال البيانات المطلوبة
+              </span>
+              <span *ngIf="control.errors['max']">
+                البيانات المدخلة غير صحيحة -
+
+                تم ادخال {{control.errors.max.actual }}
+                يجب ان لا تزيد عن
+                {{control.errors.max.max }}
+
+
+              </span>
+              <span *ngIf="control.errors['min']">
+                البيانات المدخلة غير صحيحة -
+
+                تم ادخال {{control.errors.min.actual }}
+                يجب ان لا تقل عن
+                {{control.errors.min.min }}
+
+
+              </span>
+              <span *ngIf="control.errors['minlength']">
+                البيانات المدخلة غير كافية -
+
+                تم ادخال {{control.errors.minlength.actualLength }} حرف فقط
+                يجب ان تكون
+                {{control.errors.minlength.requiredLength }}
+                حروف </span>
+
+              <span *ngIf="
+              control.errors['maxlength']">
+
+                Full Name is No more than 100 characters - الاسم الثلاثي لا يزيد عن 100 حرف
+              </span>
+              <span *ngIf="
+              control.errors['pattern'] && !control.errors['minlength']">
+
+                Please use only English And Arabic characters - يرجى استخدام الأحرف الإنجليزية و العربية فقط
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div> -->

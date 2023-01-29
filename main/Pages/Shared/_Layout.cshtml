@@ -1,0 +1,44 @@
+﻿@using Microsoft.AspNetCore.Hosting
+@using Microsoft.AspNetCore.Mvc.ViewEngines
+@inject IWebHostEnvironment Environment
+@inject ICompositeViewEngine Engine
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - 2023 - برنامج تقيم الطلبة بالمدرسة</title>
+    <link rel="stylesheet" href="~/Identity/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Identity/css/site.css" />
+    <link rel="stylesheet" href="~/login.css" />
+</head>
+<body>
+
+
+    <div class="container bodybackgroun2">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <div class=" justify-content-center">
+        <div align="center">
+
+            <footer class="page-footer font-small special-color-dark ">
+
+                <div class="footer-copyright text-center py-3">
+                    &copy; 2023 - برنامج تقيم الطلبة بالمدرسة
+                </div>
+                <div dir="ltr" class="page-footer font-small special-color-dark pt-4">
+
+                </div>
+
+            </footer>
+        </div>
+    </div>
+  
+    <script src="~/Identity/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/Identity/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Identity/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!-- <input class="form-control " id="fullname" type="text"
+  placeholder=" Please Enter  Full Name - يرجى إدخال    الاسم الثلاثي " [formControl]="control"> -->
+
+<div class="card" style="width: 99%; margin-bottom: 11px;">
+  <div class="card-header">
+    <div dir="rtl" align="center">
+      <label class="col-md-12 control-label" for="{{ id }}">
+        {{ label }}
+      </label>
+    </div>
+  </div>
+  <div class="card-body text-primary">
+    <div class="col-md-12">
+      <div class="input-icon">
+        <div
+          class="form-group has-danger"
+          [ngClass]="{
+            'has-error': (control.touched || control.dirty) && !control.valid
+          }"
+        >
+          <div class="col-md-12">
+            <input
+              [readonly]="readonly"
+              class="form-control"
+              id="{{ id }}"
+              type="{{ type }}"
+              placeholder="{{ placeholder }}"
+              [formControl]="control"
+              [ngClass]="{
+                'has-success2':
+                  (control.touched || control.dirty) && control.valid,
+
+                'has-error2':
+                  (control.touched || control.dirty) && !control.valid
+              }"
+            />
+            <div
+              style="text-align: right; margin-top: 5px;"
+              class="col-md-12 alert alert-danger border border-danger"
+              *ngIf="(control.touched || control.dirty) && control.errors"
+            >
+              <span
+                style="padding-top: 15px;"
+                *ngIf="control.errors['required']"
+              >
+                يرجى إدخال البيانات المطلوبة
+              </span>
+              <span *ngIf="control.errors['minlength']">
+                البيانات المدخلة غير صحيحة - تم ادخال
+                {{ control.errors.minlength.actualLength }} حرف فقط يجب ان تكون
+                {{ control.errors.minlength.requiredLength }}
+                حروف على الاقل
+              </span>
+              <span *ngIf="control.errors['min']">
+                البيانات المدخلة غير صحيحة - تم ادخال
+                {{ control.errors.min.actual }} - يجب ان تكون
+                {{ control.errors.min.min }}
+                او اكثر على الاقل
+              </span>
+              <span *ngIf="control.errors['max']">
+                البيانات المدخلة غير صحيحة - تم ادخال
+                {{ control.errors.max.actual }} يجب ان تكون
+                {{ control.errors.max.max }}
+                او اقل
+              </span>
+              <span *ngIf="control.errors['maxlength']">
+                البيانات المدخلة اكثر من المطلوب - تم ادخال
+                {{ control.errors.maxlength.actualLength }} حرف يجب ان تكون
+                {{ control.errors.maxlength.requiredLength }}
+                حروف
+              </span>
+              <span
+                *ngIf="
+                  control.errors['pattern'] && !control.errors['minlength']
+                "
+              >
+                {{ patternmes }}
+              </span>
+              <p *ngIf="control.errors['used']">
+                رقم البلاغ مستخدم مسبقا     
+              </p>
+              <p *ngIf="control.errors['archused']">
+                رقم البلاغ مستخدم مسبقا في البلاغات المؤرشفة  
+              </p>
+              <p *ngIf="control.errors['badnumber']">
+                رقم البلاغ غير صحيح - الرجاء التأكد من البيانات
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

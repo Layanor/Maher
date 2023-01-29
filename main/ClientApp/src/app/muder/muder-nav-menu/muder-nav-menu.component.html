@@ -1,0 +1,106 @@
+<header>
+  <div class="top_menu animated fadeInDown">
+    <div class="t_menu">
+      <div *ngIf="isAuthenticated | async" class="container">
+        <ul id="menu">
+          <!--<li class="nav-item" [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }">
+            <a class="nav-link " [routerLink]="['/muder']">الادارة</a>
+          </li>-->
+          <!--<li *ngIf="isAdmin | async" class="nav-item" [routerLinkActive]="['link-active']"
+              [routerLinkActiveOptions]="{ exact: true }">
+            <a class="nav-link " [routerLink]="['dir']"> أدارة المديريات </a>
+          </li>-->
+          <li
+            *ngIf="isAdmin | async"
+            class="nav-item"
+            [routerLinkActive]="['link-active']"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <a class="nav-link" [routerLink]="['medicalcenter']"
+              >أدارة المستشفيات</a
+            >
+          </li>
+          <li
+            *ngIf="isAdmin | async"
+            class="nav-item"
+            [routerLinkActive]="['link-active']"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <a class="nav-link" [routerLink]="['clinics']"
+              >أدارة المراكز الصحية</a
+            >
+          </li>
+          <li
+            *ngIf="isAdmin | async"
+            class="nav-item"
+            [routerLinkActive]="['link-active']"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <a class="nav-link" [routerLink]="['hospusers']"
+              >أدارة المستخدمين
+            </a>
+          </li>
+
+          <li
+            *ngIf="isAdmin | async"
+            class="nav-item"
+            [routerLinkActive]="['link-active']"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <a class="nav-link" [routerLink]="['istmara']">أدارة الاستمارات</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="t_menu">
+      <div *ngIf="isAuthenticated | async" class="container">
+        <ul id="menu">
+          <!--<li class="nav-item" [routerLinkActive]="['link-active']" [routerLinkActiveOptions]="{ exact: true }">
+            <a class="nav-link " [routerLink]="['/muder']">الادارة</a>
+          </li>-->
+          <!--<li *ngIf="isAdmin | async" class="nav-item" [routerLinkActive]="['link-active']"
+              [routerLinkActiveOptions]="{ exact: true }">
+            <a class="nav-link " [routerLink]="['dir']"> أدارة المديريات </a>
+          </li>-->
+          <li
+            *ngIf="isAdmin | async"
+            class="nav-item"
+            [routerLinkActive]="['link-active']"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <a class="nav-link" [routerLink]="['idtype']">أدارة نوع الهوية</a>
+          </li>
+          <li
+            *ngIf="isAdmin | async"
+            class="nav-item"
+            [routerLinkActive]="['link-active']"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <a class="nav-link" [routerLink]="['clinics']"
+              >أدارة المراكز الصحية</a
+            >
+          </li>
+          <li
+            *ngIf="isAdmin | async"
+            class="nav-item"
+            [routerLinkActive]="['link-active']"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <a class="nav-link" [routerLink]="['hospusers']"
+              >أدارة المستخدمين
+            </a>
+          </li>
+
+          <li
+            *ngIf="isAdmin | async"
+            class="nav-item"
+            [routerLinkActive]="['link-active']"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <a class="nav-link" [routerLink]="['istmara']">أدارة الاستمارات</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>

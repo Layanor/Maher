@@ -1,0 +1,48 @@
+<div #element1 class="col-md-12">
+  <div align="center" class="panel panel-default line" style="width: 99%; margin-top: 10px">
+    <div class="panel-heading panel-title">
+      <div align="center">
+
+        <h3>
+          قائمة بكافة المديريات
+        </h3>
+
+      </div>
+    </div>
+    <div>
+      <ejs-grid #grid height='99%' width='99%' allowExcelExport='true' enableRtl="true" allowTextWrap='true'
+        showColumnMenu='true' [showColumnChooser]='true' [dataSource]='data' [editSettings]='editSettings'
+        [contextMenuItems]="contextMenuItems" [enablePersistence]='false' [allowReordering]='true' [allowSorting]="true"
+        [sortSettings]='sortSettings' [allowGrouping]="true" [allowFiltering]="true" [filterSettings]='filterSettings'
+        [allowPaging]="true" [pageSettings]='pageSettings' [allowSelection]='true' [allowResizing]='true'
+        [gridLines]='gridLines' [toolbar]='toolbarOptions' [allowPdfExport]='true' [textWrapSettings]='wrapSettings'
+        [rowHeight]='60' (commandClick)='commandClick($event)' (toolbarClick)='toolbarClickHandler($event)'
+        (queryCellInfo)='customiseCell($event)' (columnMenuClick)='columnMenuClick($event)'
+        (dataBound)="dataBound($event)" (actionFailure)="onActionFailure($event)" (rowDataBound)='rowDataBound($event)'
+        (load)="load($event)" (actionBegin)="actionbegin($event)" (dataSourceChange)='dataSourceChange($event)'
+        (beforeDataBound)='beforeDataBound($event)' (actionComplete)='actionComplete($event)'>
+        <e-columns>
+          <e-column field='id' [customAttributes]="{class: 'e-attr'}" [visible]='false' [allowGrouping]="false"
+            [showColumnMenu]='false' minWidth=50 width=50 type='number' maxWidth=50 headerText='ID' textAlign='Right'
+            isPrimaryKey='true' [lockColumn]='true' [allowEditing]='false' [isIdentity]='true'>
+          </e-column>
+
+          <e-column field='name' headerText='اسم المديرية' [allowGrouping]="false" [allowSorting]='true'
+            [showColumnMenu]='true' [validationRules]='nameRules' minWidth=150 width=200 maxWidth=300></e-column>
+          <e-column field='shortName' [allowGrouping]="false" [showColumnMenu]='true' [allowSorting]='true'
+            [validationRules]='shortnameRules' headerText='الاسم المختصر للمديرية' minWidth=150 width=200 maxWidth=300>
+          </e-column>
+
+          <e-column field='المهام' headerText='المهام' width=50 [commands]='commands' [allowEditing]="false"
+            [allowFiltering]="false" [allowSorting]="false" [allowSearching]="false" [allowGrouping]="false"
+            [showColumnMenu]='false'></e-column>
+
+        </e-columns>
+      </ejs-grid>
+
+
+    </div>
+    <hr />
+
+  </div>
+</div>

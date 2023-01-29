@@ -1,0 +1,231 @@
+
+
+/*@font-face {
+    font-family: 'Droid Arabic Kufi';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://themes.googleusercontent.com/static/fonts/earlyaccess/droidarabickufi/v2/DroidKufi-Regular.eot?#iefix) format('embedded-opentype'), url(https://themes.googleusercontent.com/static/fonts/earlyaccess/droidarabickufi/v2/DroidKufi-Regular.woff) format('woff'), url(https://themes.googleusercontent.com/static/fonts/earlyaccess/droidarabickufi/v2/DroidKufi-Regular.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Droid Arabic Kufi';
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://themes.googleusercontent.com/static/fonts/earlyaccess/droidarabickufi/v2/DroidKufi-Bold.eot?#iefix) format('embedded-opentype'), url(https://themes.googleusercontent.com/static/fonts/earlyaccess/droidarabickufi/v2/DroidKufi-Bold.woff) format('woff'), url(https://themes.googleusercontent.com/static/fonts/earlyaccess/droidarabickufi/v2/DroidKufi-Bold.ttf) format('truetype');
+}*/
+
+@import url(https://fonts.googleapis.com/earlyaccess/droidarabickufi.css);
+body {
+    padding-bottom: 2.5rem;
+    min-height: 100vh;
+    background: url(/background-site22.jpg) no-repeat #f3f3f3 right bottom;
+    background-size: cover;
+    background-position: bottom right;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    position: relative;
+    font-family: 'Droid Arabic Kufi', 'tahoma' !important;
+    font-size: 16px;
+    color: #404040;
+    margin: 0px auto;
+    min-width: 385px;
+    max-width: 2200px;
+    text-align: center;
+}
+
+.login {
+    position: relative;
+    background-color: none !important;
+    margin-bottom: auto !important;
+    margin-top: auto !important;
+    margin-right: auto !important;
+    margin-left: auto !important;
+}
+
+    .login .content {
+        margin: 0 auto;
+        padding: 10px 20px 5px;
+        -webkit-border-radius: 7px;
+        -moz-border-radius: 7px;
+        border-radius: 7px;
+        background-color: rgba(255, 255, 255, 0.4);
+        border: 5px solid #fff;
+    }
+
+    .login .logo {
+        margin: 1px auto 20px;
+        padding: 15px;
+        text-align: center;
+    }
+
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+.login .content .form-title {
+    font-weight: 300;
+    margin-bottom: 25px;
+}
+
+.login .content h3, .login .content h4 {
+    color: #008055;
+}
+
+.card-header:first-child {
+    border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+}
+
+.card-header {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 2px;
+    background-color: rgb(4, 114, 76);
+    color: white;
+    border-top-left-radius: 10px !important;
+    border-top-right-radius: 10px !important;
+}
+
+.login .content .form-actions {
+    background-color: transparent;
+    clear: both;
+    border: 0;
+    padding: 0 30px 25px;
+    margin-right: -30px;
+    margin-left: -30px;
+}
+
+.pull-left {
+    float: left;
+}
+
+.waves-input-wrapper {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    border-radius: .2em;
+}
+
+.waves-effect {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.login .content .form-actions .btn {
+    margin-top: 1px;
+    font-size: 16px;
+    width: 188px;
+}
+
+.btn.green:not(.btn-outline) {
+    color: #FFF;
+    background-color: #00c851 !important;
+    border-color: #008055;
+    min-width: 60%;
+}
+
+footer.page-footer {
+    bottom: 0;
+    color: #fff;
+}
+
+.font-small {
+    font-size: .9rem;
+}
+
+footer.page-footer .footer-copyright {
+    position: absolute;
+    bottom: 10px !important;
+    width: 100%;
+    height: 3.5rem;
+    overflow: hidden;
+    background-color: rgb(4, 114, 76) !important;
+    font-family: 'Droid Arabic Kufi', 'tahoma' !important;
+}
+
+footer.page-footer .footer-copyright {
+    overflow: hidden;
+    color: rgba(255,255,255,.6);
+    background-color: rgba(0,0,0,.2);
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.pb-3, .py-3 {
+    padding-bottom: 1rem !important;
+}
+
+.pt-3, .py-3 {
+    padding-top: 1rem !important;
+}
+
+.pt-4, .py-4 {
+    padding-top: 0.5rem !important;
+}
+.card {
+    padding-top: 2px;
+    width: 99% !important;
+    margin-bottom: 11px !important;
+    box-shadow: 3px 5px 3px 0.5px #cecece !important;
+}
+
+.card {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: transparent !important;
+    background-clip: border-box;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.card {
+    font-weight: 400;
+    border: 0;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+}
+.valid {
+    background: url(/accept.png) no-repeat 1% 50% !important;
+    padding-left: 22px;
+    line-height: 24px !important;
+    color: #3a7d34 !important;
+    border-color: darkgreen;
+    box-shadow: 0 0 0 0.1rem #a9d0ab;
+    background-color: #e3fbe4 !important;
+    border-radius: 0.25rem;
+}
+.input-validation-error {
+    background: url(/cross.png) no-repeat 1% 50% !important;
+    padding-left: 22px;
+    line-height: 24px !important;
+    color: #ec3f41 !important;
+    border-color: red !important;
+    box-shadow: 0 0 0 0.1rem #e9c6c3;
+    background-color: #ffdfdd !important;
+    border-radius: 0.25rem;
+}
+ul {
+    list-style-type: none !important;
+}
+li {
+    list-style-type: none !important;
+}
+.validation-summary-errors > ul >li {
+    list-style-type: none !important;
+}
+.nostile {
+    list-style-type: none !important;
+}
+.validation-summary-errors ul li{
+    list-style: none;
+    margin-left: -40px
+}

@@ -1,0 +1,59 @@
+<ul class="navbar-nav mr-auto" *ngIf="isAuthenticated | async">
+  <li appDropOpen id="usernavdrop" dir="rtl" class="nav-item dropdown" dropdown>
+    <a
+      dropdownToggle
+      mdbWavesEffect
+      class="nav-link dropdown-toggle"
+     
+    >
+      <mdb-icon fas icon="user"></mdb-icon>
+      مرحبا : {{ userName | async }}
+
+      <span class="caret"></span
+    ></a>
+    <div
+      *dropdownMenu
+      class="dropdown-menu dropdown-menu-right dropdown dropdown-primary a-various-dropdown fadeInDropdown"
+      role="menu"
+    >
+      <!-- <h5 class="dropdown-header"></h5> -->
+      <a
+        style="text-align: right;"
+        mdbWavesEffect
+       
+        class="dropdown-item waves-light float-right nav-link2"
+        
+        [routerLink]="['/authentication/profile']"
+        title="تعديل | تحديث بياناتي "
+      >
+        <i class="fas fa-user"></i>
+
+        تعديل | تحديث بياناتي
+      </a>
+
+      <div class="divider dropdown-divider"></div>
+
+      <a
+        style="text-align: right; color: red !important; font-weight: bold;"
+        mdbWavesEffect
+       
+        class="dropdown-item waves-light text-white float-right nav-link2"
+        [routerLink]="['/authentication/logout']"
+        [state]="{ local: true }"
+        title="تسجيل الخروج"
+      >
+        <i class="fas fa-sign-out-alt"></i>
+        تسجيل الخروج
+      </a>
+    </div>
+  </li>
+</ul>
+
+<ul class="navbar-nav mr-auto" *ngIf="!(isAuthenticated | async)">
+  <li class="nav-item">
+    <a class="nav-link text-white" [routerLink]="['/authentication/login']">
+      <i class="fas fa-sign-in-alt"></i>
+      تسجيل الدخول
+    </a>
+  </li>
+</ul>
