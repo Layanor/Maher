@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29521.150
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "main", "main\main.csproj", "{17F1D8E8-102A-4C05-976F-BCEE88D532FA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "infra", "infra\infra.csproj", "{FAC01F2E-3A61-41B9-98EE-F7C260F6447D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{17F1D8E8-102A-4C05-976F-BCEE88D532FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17F1D8E8-102A-4C05-976F-BCEE88D532FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17F1D8E8-102A-4C05-976F-BCEE88D532FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17F1D8E8-102A-4C05-976F-BCEE88D532FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAC01F2E-3A61-41B9-98EE-F7C260F6447D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAC01F2E-3A61-41B9-98EE-F7C260F6447D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAC01F2E-3A61-41B9-98EE-F7C260F6447D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAC01F2E-3A61-41B9-98EE-F7C260F6447D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {985BF6BB-DF15-4A77-A4F9-A9F95E02B640}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,254 @@
+body {
+  background-image: linear-gradient(135deg,#5A776C 10%,#A87B2F 100%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: "Open Sans", sans-serif;
+  color: #333333;
+}
+.datails{
+  position:absolute;
+  padding: 30px;
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 17px;
+  /* identical to box height, or 153% */
+  align-items: center;
+  
+  
+  color: #333333;}
+.box-form {
+  margin: 0 auto;
+  width: 80%;
+  background: #FFFFFF;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex: 1 1 100%;
+  align-items: stretch;
+  justify-content: space-between;
+  box-shadow: 0 0 20px 6px#5A776C  ;
+}
+@media (max-width: 980px) {
+  .box-form {
+    flex-flow: wrap;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+  }
+}
+.box-form div {
+  height: auto;
+  
+}
+.box-form .left1 {
+  background-size:cover;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-repeat: no-repeat;
+  background-image: url("../image/3d-casual-life-youg-people-discussing-the-project.png" );
+  overflow: hidden;
+  align-self: center;
+}
+.box-form .left1 .overlay {
+  padding: 100px;
+  width: 900px;
+  height:  600px;
+  background: #ffffffad;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.box-form .left2 {
+  background-size:cover;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-repeat: no-repeat;
+  background-image: url("../image/casual-life-3d-side-view-of-young-man-wearing-smart-watch-and-holding-book.png" );
+  overflow: hidden;
+  overflow: hidden;
+  align-self: center;
+}
+.box-form .left2 .overlay {
+  padding: 100px;
+  width: 900px;
+  height:  600px;
+  background: #ffffffad;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.box-form .left3 {
+  background-size:cover;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-repeat: no-repeat;
+  background-image: url("../image/casual-life-3d-young-man-and-woman-sitting-in-front-of-laptop.png" );
+  overflow: hidden;
+  overflow: hidden;
+  align-self: center;
+}
+.box-form .left3 .overlay {
+  padding: 100px;
+  width: 900px;
+  height:  600px;
+  background: #ffffffad;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.box-form .left .overlay h1 {
+  position: absolute;
+  left: 29.93%;
+  right: 49.88%;
+  top: 45.41%;
+  bottom: 46.66%;
+  
+  font-family: 'Anek Malayalam';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 57px;
+  text-align: center;
+  
+  color: #577368;
+}
+.box-form .left .overlay span p {
+  margin-top: 30px;
+  font-weight: 900;
+}
+ .home{
+
+  background:#FFFFFF;
+  color: #A87B2F;
+  padding: 20px 20px;
+  border-radius: 100px;
+  display: inline-block;
+  box-shadow: 0 3px 6px 1px #042d4657;
+  margin: 10px;
+}
+p{
+  font-family: 'Anek Malayalam';
+}
+span a {
+
+  background:#FFFFFF;
+  color: #A87B2F;
+  padding: 14px 18px;
+  border-radius: 100px;
+  display: inline-block;
+  box-shadow: 0 3px 6px 1px #042d4657;
+}
+.box-form .left .overlay span a:last-child {
+  background: #1dcaff;
+  margin-left: 30px;
+}
+.social {
+  padding: 20px;
+  /* overflow: hidden; */
+  position: absolute;
+  left:     0;
+  bottom:   0;
+ 
+  
+}
+
+.shado-background{
+
+
+  background: rgba(212, 206, 200, 0.2);
+  backdrop-filter: blur(50px);
+  border-radius: 60px; size: 30px; 
+  padding: 30px; 
+  margin: 1%;
+  color: #A87B2F; display: flex;  
+
+justify-content: space-between;
+}
+
+.box-form  button {
+
+
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 35px;
+  border-radius: 50px;
+  border: 0;
+  outline: 0;
+  box-shadow: 0px 4px 20px 0px #A87B2F;
+  margin-bottom: 0px;
+  background-image: linear-gradient(135deg, #A87B2F 10%, #A87B2F 100%);
+}
+.button{
+/* position: absolute; */
+
+width: 200px;
+height: 50px;
+left: 970px;
+top: 597px;}
+
+/* label {
+  display: block;
+  position: relative;
+  margin-left: 30px;
+}
+
+label::before {
+  content: ' \f00c';
+  position: absolute;
+  font-family: FontAwesome;
+  background: transparent;
+  border: 3px solid #70F570;
+  border-radius: 4px;
+  color: transparent;
+  left: -30px;
+  transition: all 0.2s linear;
+} */
+
+/* label:hover::before {
+  font-family: FontAwesome;
+  content: ' \f00c';
+  color: #fff;
+  cursor: pointer;
+  background: #70F570;
+}
+
+label:hover::before .text-checkbox {
+  background: #70F570;
+} */
+
+/* label span.text-checkbox {
+  display: inline-block;
+  height: auto;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s linear;
+} */
+table { 
+  border-spacing: 70px 1px; 
+  border-collapse: separate;
+} 
+input {
+  appearance: none;
+
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+
+  border: 2px solid #999;
+  transition: 0.2s all linear;
+  margin-right: 5px;
+
+  position: relative;
+  top: 4px;
+}
+
+input:checked {
+  border: 6px solid #A87B2F;
+}
+label input[type="checkbox"] {
+  display: none;
+  
+}
